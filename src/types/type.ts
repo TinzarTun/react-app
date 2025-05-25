@@ -7,9 +7,9 @@ export interface Post {
   category?: string;
   createdAt?: string;
   author?:{
-    name: string;
-    avatar: string;
-    date: string;
-    readTime: string;
+    name?: string;
+    avatar?: string;
+    date?: string;
+    readTime?: string;
   }
 }
