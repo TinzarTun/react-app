@@ -1,5 +1,7 @@
+import type { Post } from "../types/type";
+
 export default function HeroSection(
-  { title, description, label }: { title: string, description: string, label: string } 
+  { title, description, label }: Post 
 ) {
   return (
     <section className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white py-16 md:py-24">
