@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -41,18 +42,24 @@ export default function Header() {
           BlogFolio
         </a>
         <nav className="hidden md:flex space-x-8">
-          <a
-            href="#"
+          <Link
+            to="/"
             className="font-medium text-gray-900 hover:text-emerald-600 transition"
           >
             Home
-          </a>
-          <a
-            href="#blog"
+          </Link>
+          <Link
+            to="/blog"
             className="font-medium text-gray-500 hover:text-emerald-600 transition"
           >
             Blog
-          </a>
+          </Link>
+          <Link
+            to="/profile"
+            className="font-medium text-gray-500 hover:text-emerald-600 transition"
+          >
+            Profile
+          </Link>
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={toggleDropdown}
