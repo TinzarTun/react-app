@@ -2,7 +2,7 @@ import type { Post } from "../types/type";
 
 export default function RecentPosts({ recentPosts }: { recentPosts: Post[] }) {
   return (
-    <section className="py-12 bg-gray-100">
+    <section className="py-12 bg-gray-100" id="blog">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
           Recent Posts
