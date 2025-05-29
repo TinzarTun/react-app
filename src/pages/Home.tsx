@@ -1,7 +1,7 @@
 import type { Post } from "../types/type";
 import HeroSection from "../components/HeroSection";
 import FeaturedPost from "../components/FeaturedPost";
-// import RecentPosts from "../components/RecentPosts";
+import RecentPosts from "../components/RecentPosts";
 import Newsletter from "../components/Newsletter";
 import Categories from "../components/Categories";
 
@@ -70,41 +70,41 @@ export default function Home() {
       },
     },
   ];
-  // const recentPosts: Post[] = [
-  //   {
-  //     title: "The Future of Web Development",
-  //     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //     category: "Technology",
-  //     imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-  //     author: {
-  //       name: "Alex Chen",
-  //       avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-  //       date: "May 12, 2025",
-  //     },
-  //   },
-  //   {
-  //     title: "10 Easy Recipes for Beginners",
-  //     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //     category: "Food",
-  //     imageUrl: "https://images.unsplash.com/photo-1501504905252-473c47e087f8",
-  //     author: {
-  //       name: "Maria Garcia",
-  //       avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-  //       date: "May 10, 2025",
-  //     },
-  //   },
-  //   {
-  //     title: "5 Morning Habits for Better Health",
-  //     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //     category: "Health",
-  //     imageUrl: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9",
-  //     author: {
-  //       name: "James Wilson",
-  //       avatar: "https://randomuser.me/api/portraits/men/67.jpg",
-  //       date: "May 8, 2025",
-  //     },
-  //   },
-  // ];
+  const recentPosts: Post[] = [
+    {
+      title: "The Future of Web Development",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      category: "Technology",
+      imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      author: {
+        name: "Alex Chen",
+        avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+        date: "May 12, 2025",
+      },
+    },
+    {
+      title: "10 Easy Recipes for Beginners",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      category: "Food",
+      imageUrl: "https://images.unsplash.com/photo-1501504905252-473c47e087f8",
+      author: {
+        name: "Maria Garcia",
+        avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+        date: "May 10, 2025",
+      },
+    },
+    {
+      title: "5 Morning Habits for Better Health",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      category: "Health",
+      imageUrl: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9",
+      author: {
+        name: "James Wilson",
+        avatar: "https://randomuser.me/api/portraits/men/67.jpg",
+        date: "May 8, 2025",
+      },
+    },
+  ];
   const categories: Post[] = [
     {
       category: "Technology",
@@ -131,7 +131,7 @@ export default function Home() {
         label={posts.label!}
       />
       <FeaturedPost featuredPosts={featuredPosts} />
-      {/* <RecentPosts recentPosts={recentPosts} /> */}
+      <RecentPosts recentPosts={recentPosts} /> 
       <Newsletter />
       <Categories categories={categories} />
     </div>
