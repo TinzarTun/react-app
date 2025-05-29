@@ -21,7 +21,7 @@ export default function FeaturedPost(
     }, 5000); // Change slide every 5 seconds
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, featuredPosts.length]);
 
   const goToPrevious = () => {
     setCurrentIndex(
