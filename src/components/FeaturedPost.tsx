@@ -63,6 +63,15 @@ export default function FeaturedPost(
   }, [featuredPosts.length]);
 
   const currentPost = featuredPosts[currentIndex];
+  if (!featuredPosts || featuredPosts.length === 0) {
+    return (
+      <section className="py-12 md:py-16">
+        <div className="text-center text-gray-500">
+          No featured posts available.
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-12 md:py-16">
