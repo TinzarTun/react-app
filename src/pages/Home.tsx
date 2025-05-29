@@ -7,10 +7,10 @@ import Categories from "../components/Categories";
 
 export default function Home() {
   const posts: Post = {
-    title: "Welcome to My Blog",
+    title: "The Power of Positive Thinking",
     description:
-      "Explore the latest articles on web development, design, and more.",
-    label: "Get Started",
+      "Learn how to cultivate a positive mindset and transform your life.",
+    label: "Start Reading",
   };
   const featuredPosts: Post[] = [
     {
@@ -131,7 +131,7 @@ export default function Home() {
         label={posts.label!}
       />
       <FeaturedPost featuredPosts={featuredPosts} />
-      <RecentPosts recentPosts={recentPosts} />
+      <RecentPosts recentPosts={recentPosts} /> 
       <Newsletter />
       <Categories categories={categories} />
     </div>

@@ -21,7 +21,7 @@ export default function FeaturedPost(
     }, 5000); // Change slide every 5 seconds
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, featuredPosts.length]);
 
   const goToPrevious = () => {
     setCurrentIndex(
@@ -46,17 +46,32 @@ export default function FeaturedPost(
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
       if (event.key === "ArrowLeft") {
-        goToPrevious();
+        setCurrentIndex((prev) =>
+          prev === 0 ? featuredPosts.length - 1 : prev - 1
+        );
+        setIsAutoPlaying(false);
       } else if (event.key === "ArrowRight") {
-        goToNext();
+        setCurrentIndex((prev) =>
+          prev === featuredPosts.length - 1 ? 0 : prev + 1
+        );
+        setIsAutoPlaying(false);
       }
     };
 
     window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
-  }, [currentIndex]);
+  }, [featuredPosts.length]);
 
   const currentPost = featuredPosts[currentIndex];
+  if (!featuredPosts || featuredPosts.length === 0) {
+    return (
+      <section className="py-12 md:py-16">
+        <div className="text-center text-gray-500">
+          No featured posts available.
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-12 md:py-16">
