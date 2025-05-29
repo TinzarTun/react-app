@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { Post } from "../types/type";
 function getCategory(category: string | undefined) {
   switch (category) {
@@ -23,11 +24,13 @@ export default function RecentPosts({ recentPosts }: { recentPosts: Post[] }) {
               key={post.id}
               className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition"
             >
-              <img
-                className="h-48 w-full object-cover"
-                src={post.imageUrl}
-                alt={post.title}
-              />
+              <Link to={`/posts/${post.id}`}>
+                <img
+                  className="h-48 w-full object-cover"
+                  src={post.imageUrl}
+                  alt={post.title}
+                />
+              </Link>
               <div className="p-6">
                 <div className="flex items-center mb-2">
                   <span

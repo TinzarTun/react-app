@@ -72,6 +72,7 @@ export default function Home() {
   ];
   const recentPosts: Post[] = [
     {
+      id: 1,
       title: "The Future of Web Development",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       category: "Technology",
@@ -83,6 +84,7 @@ export default function Home() {
       },
     },
     {
+      id: 2,
       title: "10 Easy Recipes for Beginners",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       category: "Food",
@@ -94,6 +96,7 @@ export default function Home() {
       },
     },
     {
+      id: 3,
       title: "5 Morning Habits for Better Health",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       category: "Health",
@@ -131,7 +134,7 @@ export default function Home() {
         label={posts.label!}
       />
       <FeaturedPost featuredPosts={featuredPosts} />
-      <RecentPosts recentPosts={recentPosts} /> 
+      <RecentPosts recentPosts={recentPosts} />
       <Newsletter />
       <Categories categories={categories} />
     </div>
