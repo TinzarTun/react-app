@@ -46,15 +46,21 @@ export default function FeaturedPost(
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
       if (event.key === "ArrowLeft") {
-        goToPrevious();
+        setCurrentIndex((prev) =>
+          prev === 0 ? featuredPosts.length - 1 : prev - 1
+        );
+        setIsAutoPlaying(false);
       } else if (event.key === "ArrowRight") {
-        goToNext();
+        setCurrentIndex((prev) =>
+          prev === featuredPosts.length - 1 ? 0 : prev + 1
+        );
+        setIsAutoPlaying(false);
       }
     };
 
     window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
-  }, [currentIndex]);
+  }, [featuredPosts.length]);
 
   const currentPost = featuredPosts[currentIndex];
 
