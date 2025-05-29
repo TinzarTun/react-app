@@ -4,6 +4,7 @@ import Profile from "./pages/Profile";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import PostDetail from "./pages/PostDetail";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/posts/:id" element={<PostDetail />} />
       </Routes>
       <Footer />
     </div>

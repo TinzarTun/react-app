@@ -24,7 +24,7 @@ export default function RecentPosts({ recentPosts }: { recentPosts: Post[] }) {
               key={post.id}
               className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition"
             >
-              <Link to={`/posts/${post.id}/post-detail`}>
+              <Link to={`/posts/${post.id}`}>
                 <img
                   className="h-48 w-full object-cover"
                   src={post.imageUrl}
