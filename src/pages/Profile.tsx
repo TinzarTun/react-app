@@ -10,5 +10,5 @@ export default function Profile() {
       {/* <!-- Main Content --> */}
       <ProfileContent />
     </div>
-  )
+  );
 }
