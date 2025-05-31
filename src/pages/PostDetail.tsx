@@ -7,9 +7,11 @@ export default function PostDetail() {
   return (
     <div className="min-h-screen">
       <div className="container mx-auto px-4 py-8 md:py-12">
-          <h1>Post ID: {id}</h1>
         <div className="flex flex-col lg:flex-row gap-8">
-          <PostContent />
+          {/* <!-- Post Content --> */}
+          <PostContent id={id} />
+
+          {/* <!-- Sidebar --> */}
           <Sidebar />
         </div>
       </div>
