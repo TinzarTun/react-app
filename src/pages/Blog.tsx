@@ -11,7 +11,7 @@ export default function Blog() {
   };
   const recentPosts: Post[] = [
     {
-      id: 2,
+      id: 1,
       title: "The Future of Web Development",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       category: "Technology",
