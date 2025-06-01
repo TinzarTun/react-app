@@ -38,9 +38,9 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <a href="#" className="text-2xl font-bold text-emerald-600">
+        <Link to="/" className="text-2xl font-bold text-emerald-600">
           BlogFolio
-        </a>
+        </Link>
         <nav className="hidden md:flex space-x-8">
           <Link
             to="/"
@@ -91,51 +91,51 @@ export default function Header() {
                 aria-labelledby="category-dropdown"
                 role="menu"
               >
-                <a
-                  href="#"
+                <Link
+                  to="/category/technology"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition"
                   role="menuitem"
                   onClick={closeDropdown}
                 >
                   Technology
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/category/food"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition"
                   role="menuitem"
                   onClick={closeDropdown}
                 >
                   Food
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/category/health"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition"
                   role="menuitem"
                   onClick={closeDropdown}
                 >
                   Health
-                </a>
+                </Link>
               </div>
             )}
           </div>
-          <a
-            href="#"
+          <Link
+            to="/about"
             className="font-medium text-gray-500 hover:text-emerald-600 transition"
           >
             About
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/contact"
             className="font-medium text-gray-500 hover:text-emerald-600 transition"
           >
             Contact
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/login"
             className="font-medium text-gray-500 hover:text-emerald-600 transition"
           >
             Login
-          </a>
+          </Link>
         </nav>
         <button className="md:hidden text-gray-500 hover:text-gray-900 focus:outline-none">
           <svg

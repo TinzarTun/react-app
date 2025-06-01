@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import PostDetail from "./pages/PostDetail";
+import About from "./pages/About";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/posts/:id" element={<PostDetail />} />
+        <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
     </div>
