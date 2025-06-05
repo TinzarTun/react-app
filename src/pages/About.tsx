@@ -4,6 +4,23 @@ type User = {
   name: string;
   age: number;
   email: string;
+  phone?: string;
+  website?: string;
+  company?: {
+    name: string;
+    catchPhrase: string;
+    bs: string;
+  };
+  address?: {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
+    geo: {
+      lat: string;
+      lng: string;
+    };
+  };
 };
 export default function About() {
   // hooks
@@ -63,12 +80,20 @@ export default function About() {
   //   console.log("User submitted:", user);
   // }
 
-  //useEffect
+  const [users, setUser] = useState<User[]>([]);
+  console.log(users);
   const [name, setName] = useState<string>("");
+  // API fetch
+  const fetchUsers = async () => {
+    await fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((data) => setUser(data));
+  };
+  //useEffect
   useEffect(() => {
-    // This code runs when the component mounts
-    console.log("useEffect");
+    fetchUsers();
     // setName("Rosella");
+    console.log("useEffect");
   }, [count]); // Empty dependency array means this runs once
 
   return (
@@ -95,6 +120,90 @@ export default function About() {
       >
         Decrement
       </button>
+      <br />
+      {users &&
+        users.map((user, index) => (
+          <div key={index} className="border border-gray-300 p-4 rounded mb-4">
+            <p>
+              <strong>
+                <i>Name : </i>
+              </strong>
+              {user.name}
+            </p>
+            <p>
+              <strong>
+                <i>Email : </i>
+              </strong>
+              {user.email}
+            </p>
+            <p>
+              <strong>
+                <i>Phone : </i>
+              </strong>
+              {user.phone}
+            </p>
+            <p>
+              <strong>
+                <i>Website : </i>
+              </strong>
+              {user.website}
+            </p>
+            <p>
+              <strong>
+                <i>Company Name : </i>
+              </strong>
+              {user.company?.name}
+            </p>
+            <p>
+              <strong>
+                <i>Company CatchPhrase : </i>
+              </strong>
+              {user.company?.catchPhrase}
+            </p>
+            <p>
+              <strong>
+                <i>Company Bs : </i>
+              </strong>
+              {user.company?.bs}
+            </p>
+            <p>
+              <strong>
+                <i>Address Street : </i>
+              </strong>
+              {user.address?.street}
+            </p>
+            <p>
+              <strong>
+                <i>Address Suite : </i>
+              </strong>
+              {user.address?.suite}
+            </p>
+            <p>
+              <strong>
+                <i>Address City : </i>
+              </strong>
+              {user.address?.city}
+            </p>
+            <p>
+              <strong>
+                <i>Address Zipcode : </i>
+              </strong>
+              {user.address?.zipcode}
+            </p>
+            <p>
+              <strong>
+                <i>Address Geo Lat : </i>
+              </strong>
+              {user.address?.geo.lat}
+            </p>
+            <p>
+              <strong>
+                <i>Address Geo Lng : </i>
+              </strong>
+              {user.address?.geo.lng}
+            </p>
+          </div>
+        ))}
       {/* <div>
         <h2 className="text-lg font-semibold">User Information</h2>
         <p>
