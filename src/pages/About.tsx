@@ -80,14 +80,19 @@ export default function About() {
   //   console.log("User submitted:", user);
   // }
 
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
   const [users, setUser] = useState<User[]>([]);
   console.log(users);
   const [name, setName] = useState<string>("");
   // API fetch
   const fetchUsers = async () => {
+    setLoading(true);
     await fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
-      .then((data) => setUser(data));
+      .then((data) => setUser(data))
+      .catch((error) => setError(error.message))
+      .finally(() => setLoading(false));
   };
   //useEffect
   useEffect(() => {
@@ -95,6 +100,13 @@ export default function About() {
     // setName("Rosella");
     console.log("useEffect");
   }, [count]); // Empty dependency array means this runs once
+
+  if (loading) {
+    return <div>loading...</div>;
+  }
+  if (error) {
+    return <div>Error : {error}</div>;
+  }
 
   return (
     <div className="min-h-screen">
@@ -121,7 +133,7 @@ export default function About() {
         Decrement
       </button>
       <br />
-      {users &&
+      {users.length > 0 ? (
         users.map((user, index) => (
           <div key={index} className="border border-gray-300 p-4 rounded mb-4">
             <p>
@@ -203,7 +215,10 @@ export default function About() {
               {user.address?.geo.lng}
             </p>
           </div>
-        ))}
+        ))
+      ) : (
+        <p>No users found</p>
+      )}
       {/* <div>
         <h2 className="text-lg font-semibold">User Information</h2>
         <p>
